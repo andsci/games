@@ -10,3 +10,7 @@
 /vendor/
 /web/bundles/
 .idea/
+
+node_modules/
+bower_components/
+/web/assets

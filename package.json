@@ -1,0 +1,19 @@
+{
+  "name": "Socca360",
+  "version": "1.0.0",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-less": "^3.0.3",
+    "gulp-if": "^1.2.5",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-uglifycss": "^1.0.4"
+  },
+  "devDependencies": {},
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/socca360/web.git"
+  }
+}
