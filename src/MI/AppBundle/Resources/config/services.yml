@@ -1,4 +1,4 @@
 services:
-#    mi_app.example:
-#        class: MI\AppBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    mi.parser:
+        class: MI\AppBundle\Service\Parser
+        arguments: [@simple_html_dom, @doctrine.orm.entity_manager]

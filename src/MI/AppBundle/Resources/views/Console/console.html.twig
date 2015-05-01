@@ -4,4 +4,25 @@
 
 {% block body %}
 <h1>Welcome to the {{ type }} page</h1>
+
+    <table>
+        <tr>
+            <th>title</th>
+            <th>genre</th>
+            <th>developer</th>
+            <th>year</th>
+        </tr>
+
+        {% for game in games %}
+        <tr>
+            <td>{{ game.title }}</td>
+            <td>{{ game.genre }}</td>
+            <td>{{ game.developer }}</td>
+            <td>{{ game.year }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
 {% endblock %}
