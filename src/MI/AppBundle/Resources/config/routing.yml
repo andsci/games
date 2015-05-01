@@ -1,3 +1,11 @@
 game_homepage:
     path:     /
     defaults: { _controller: MIAppBundle:Home:Index }
+
+console:
+    path:     /console/{type}
+    defaults: { _controller: MIAppBundle:Console:console }
+
+games:
+    path:     /games
+    defaults: { _controller: MIAppBundle:Games:index }
