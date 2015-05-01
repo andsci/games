@@ -3,7 +3,7 @@
 namespace MI\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Game
  *
@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Game
 {
+    /**
+     * @ORM\ManyToOne(targetEntity="Console", inversedBy="games")
+     * @ORM\JoinColumn(name="console_id", referencedColumnName="id")
+     */
+    private $console;
+
     /**
      * @var integer
      *
@@ -48,7 +54,6 @@ class Game
      * @ORM\Column(name="year", type="integer")
      */
     private $year;
-
 
     /**
      * Get id
@@ -150,5 +155,28 @@ class Game
     public function getYear()
     {
         return $this->year;
+    }
+
+    /**
+     * Set console
+     *
+     * @param \MI\AppBundle\Entity\Console $console
+     * @return Game
+     */
+    public function setConsole(\MI\AppBundle\Entity\Console $console = null)
+    {
+        $this->console = $console;
+
+        return $this;
+    }
+
+    /**
+     * Get console
+     *
+     * @return \MI\AppBundle\Entity\Console 
+     */
+    public function getConsole()
+    {
+        return $this->console;
     }
 }

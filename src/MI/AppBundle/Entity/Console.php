@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Console
 {
     /**
+     * @ORM\OneToMany(targetEntity="Game", mappedBy="console")
+     */
+    private $games;
+
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
@@ -120,5 +126,45 @@ class Console
     public function getYear()
     {
         return $this->year;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->games = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add games
+     *
+     * @param \MI\AppBundle\Entity\Game $games
+     * @return Console
+     */
+    public function addGame(\MI\AppBundle\Entity\Game $games)
+    {
+        $this->games[] = $games;
+
+        return $this;
+    }
+
+    /**
+     * Remove games
+     *
+     * @param \MI\AppBundle\Entity\Game $games
+     */
+    public function removeGame(\MI\AppBundle\Entity\Game $games)
+    {
+        $this->games->removeElement($games);
+    }
+
+    /**
+     * Get games
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getGames()
+    {
+        return $this->games;
     }
 }
